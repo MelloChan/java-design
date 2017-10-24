@@ -1,7 +1,7 @@
 package design.exam04.sf;
 
 /**
- * 调用测试
+ * 调用测试客户端
  * Created by MelloChan on 2017/10/24.
  */
 public class Main {

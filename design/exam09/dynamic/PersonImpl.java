@@ -1,4 +1,4 @@
-package design.exam09;
+package design.exam09.dynamic;
 
 /**
  * Person 实现

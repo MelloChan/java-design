@@ -1,4 +1,4 @@
-package design.exam09;
+package design.exam09.dynamic;
 
 import java.lang.reflect.Proxy;
 import java.util.concurrent.ConcurrentHashMap;

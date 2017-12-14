@@ -1,16 +1,15 @@
-package design.exam09;
+package design.exam09.dynamic;
 
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by MelloChan on 2017/12/8.
+ * Created by MelloChan on 2017/12/7.
  */
-public class NonOwnerInvocationHandler implements InvocationHandler {
+public class OwnerInvacationHandler implements InvocationHandler {
     private Person person;
 
-    public NonOwnerInvocationHandler(Person person) {
+    public OwnerInvacationHandler(Person person) {
         this.person = person;
     }
 
@@ -20,11 +19,11 @@ public class NonOwnerInvocationHandler implements InvocationHandler {
             if (method.getName().startsWith("get")) {
                 return method.invoke(person, args);
             } else if (method.getName().equals("setHotOrNotRating")) {
-                return method.invoke(person, args);
+                throw new IllegalArgumentException();
             } else if (method.getName().startsWith("set")) {
-                throw new IllegalAccessException();
+                return method.invoke(person, args);
             }
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
